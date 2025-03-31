@@ -1,0 +1,120 @@
+table CO
+	lineageTag: 93d38eab-4684-4561-9f4c-e8fb48ce2085
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 0de7e23f-3af5-4cb9-a749-c0425067982b
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GDP Real (USD) '
+		dataType: int64
+		formatString: 0
+		lineageTag: 57f672ce-94ca-423b-bff9-663e95fd9ce6
+		summarizeBy: sum
+		sourceColumn: "GDP Real (USD) "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GDP growth (%)'
+		dataType: double
+		lineageTag: e4ea5cbc-18ca-406a-b215-31bffa797939
+		summarizeBy: sum
+		sourceColumn: GDP growth (%)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Per Capita'
+		dataType: int64
+		formatString: 0
+		lineageTag: bc80f826-d0b2-41c3-b534-c415513f07d6
+		summarizeBy: sum
+		sourceColumn: Per Capita
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'World Population'
+		dataType: int64
+		formatString: 0
+		lineageTag: 52037b6c-5307-4d9c-aff7-9017eca79141
+		summarizeBy: sum
+		sourceColumn: World Population
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net Change'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5206f06e-c481-4563-a9b6-841eca019c52
+		summarizeBy: sum
+		sourceColumn: Net Change
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Population change (%)'
+		dataType: double
+		lineageTag: 3827ada7-32eb-4292-8b1c-da3b3846891b
+		summarizeBy: sum
+		sourceColumn: Population change (%)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fossil CO2 Emissions (tons)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 92bd2bfb-5228-4642-8ffa-0e7b7c888e08
+		summarizeBy: sum
+		sourceColumn: Fossil CO2 Emissions (tons)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CO2 emissions change'
+		dataType: double
+		lineageTag: 4eac78c0-34b3-407d-81fc-01ca385826fc
+		summarizeBy: sum
+		sourceColumn: CO2 emissions change
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'CO2 emissions per capita'
+		dataType: double
+		lineageTag: 5b82b986-97e1-4041-bea2-0794311f121c
+		summarizeBy: sum
+		sourceColumn: CO2 emissions per capita
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Population Density (P/Km²)'
+		dataType: int64
+		formatString: 0
+		lineageTag: f5489c2b-94d1-4f7d-b116-5158597f1bbf
+		summarizeBy: sum
+		sourceColumn: Population Density (P/Km²)
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CO = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\marib\OneDrive\Desktop\Power_BI_CO2\CO2.xlsx"), null, true),
+				    CO_Table = Fonte{[Item="CO",Kind="Table"]}[Data],
+				    #"Tipo Alterado" = Table.TransformColumnTypes(CO_Table,{{"Year", Int64.Type}, {"GDP Real (USD) ", Int64.Type}, {"GDP growth (%)", type number}, {"Per Capita", Int64.Type}, {"World Population", Int64.Type}, {"Net Change", Int64.Type}, {"Population change (%)", type number}, {"Fossil CO2 Emissions (tons)", Int64.Type}, {"CO2 emissions change", type number}, {"CO2 emissions per capita", type number}, {"Population Density (P/Km²)", Int64.Type}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -1,56 +1,70 @@
 table CO
-	lineageTag: 93d38eab-4684-4561-9f4c-e8fb48ce2085
+	lineageTag: eda522a2-2762-4806-84ff-89fe061eb590
 
 	column Year
-		dataType: int64
-		formatString: 0
-		lineageTag: 0de7e23f-3af5-4cb9-a749-c0425067982b
-		summarizeBy: sum
+		dataType: dateTime
+		formatString: yyyy
+		lineageTag: 958960b0-95aa-494f-8e81-593e3f032271
+		summarizeBy: none
 		sourceColumn: Year
+
+		variation Variation
+			isDefault
+			relationship: b862004a-ceab-4c41-924e-ac1a60d4c05d
+			defaultHierarchy: LocalDateTable_bed6532b-7a6b-49b7-a066-e9fa67fcd1f2.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
 	column 'GDP Real (USD) '
 		dataType: int64
-		formatString: 0
-		lineageTag: 57f672ce-94ca-423b-bff9-663e95fd9ce6
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 49157d3a-3272-4316-affe-1ae0d80dbc98
 		summarizeBy: sum
 		sourceColumn: "GDP Real (USD) "
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
 	column 'GDP growth (%)'
 		dataType: double
-		lineageTag: e4ea5cbc-18ca-406a-b215-31bffa797939
+		formatString: 0.0000%;-0.0000%;0.0000%
+		lineageTag: 56411490-6cac-48f4-80fa-5adfdb81d9f9
 		summarizeBy: sum
 		sourceColumn: GDP growth (%)
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Per Capita'
 		dataType: int64
-		formatString: 0
-		lineageTag: bc80f826-d0b2-41c3-b534-c415513f07d6
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9079b352-f5d8-41fc-b181-81962ec33dbb
 		summarizeBy: sum
 		sourceColumn: Per Capita
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
 	column 'World Population'
 		dataType: int64
 		formatString: 0
-		lineageTag: 52037b6c-5307-4d9c-aff7-9017eca79141
+		lineageTag: 6e0bd293-aaec-4a2a-9b2c-01d711d93769
 		summarizeBy: sum
 		sourceColumn: World Population
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
 
 	column 'Net Change'
 		dataType: int64
 		formatString: 0
-		lineageTag: 5206f06e-c481-4563-a9b6-841eca019c52
+		lineageTag: 00caa962-bd48-4ea9-a357-f09bbd570354
 		summarizeBy: sum
 		sourceColumn: Net Change
 
@@ -58,18 +72,17 @@ table CO
 
 	column 'Population change (%)'
 		dataType: double
-		lineageTag: 3827ada7-32eb-4292-8b1c-da3b3846891b
+		formatString: 0.000%;-0.000%;0.000%
+		lineageTag: b7bcdf37-6e3d-4826-8027-abdbe5fb0583
 		summarizeBy: sum
 		sourceColumn: Population change (%)
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Fossil CO2 Emissions (tons)'
 		dataType: int64
-		formatString: 0
-		lineageTag: 92bd2bfb-5228-4642-8ffa-0e7b7c888e08
+		formatString: #,0
+		lineageTag: 33a343c0-f2c9-4d04-9de5-6fe0283c8860
 		summarizeBy: sum
 		sourceColumn: Fossil CO2 Emissions (tons)
 
@@ -77,17 +90,16 @@ table CO
 
 	column 'CO2 emissions change'
 		dataType: double
-		lineageTag: 4eac78c0-34b3-407d-81fc-01ca385826fc
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: dc964677-5734-4f0a-8eb7-76efbaf2143f
 		summarizeBy: sum
 		sourceColumn: CO2 emissions change
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'CO2 emissions per capita'
 		dataType: double
-		lineageTag: 5b82b986-97e1-4041-bea2-0794311f121c
+		lineageTag: 50280fd1-c4f5-4c28-a87f-89e301d0f212
 		summarizeBy: sum
 		sourceColumn: CO2 emissions per capita
 
@@ -98,7 +110,7 @@ table CO
 	column 'Population Density (P/Km²)'
 		dataType: int64
 		formatString: 0
-		lineageTag: f5489c2b-94d1-4f7d-b116-5158597f1bbf
+		lineageTag: 37293b5d-6c0b-4550-9f5c-e8f4638de357
 		summarizeBy: sum
 		sourceColumn: Population Density (P/Km²)
 
@@ -110,11 +122,9 @@ table CO
 				let
 				    Fonte = Excel.Workbook(File.Contents("C:\Users\marib\OneDrive\Desktop\Power_BI_CO2\CO2.xlsx"), null, true),
 				    CO_Table = Fonte{[Item="CO",Kind="Table"]}[Data],
-				    #"Tipo Alterado" = Table.TransformColumnTypes(CO_Table,{{"Year", Int64.Type}, {"GDP Real (USD) ", Int64.Type}, {"GDP growth (%)", type number}, {"Per Capita", Int64.Type}, {"World Population", Int64.Type}, {"Net Change", Int64.Type}, {"Population change (%)", type number}, {"Fossil CO2 Emissions (tons)", Int64.Type}, {"CO2 emissions change", type number}, {"CO2 emissions per capita", type number}, {"Population Density (P/Km²)", Int64.Type}})
+				    #"Tipo Alterado" = Table.TransformColumnTypes(CO_Table,{{"Year", type date}, {"GDP Real (USD) ", Int64.Type}, {"GDP growth (%)", type number}, {"Per Capita", Int64.Type}, {"World Population", Int64.Type}, {"Net Change", Int64.Type}, {"Population change (%)", type number}, {"Fossil CO2 Emissions (tons)", Int64.Type}, {"CO2 emissions change", type number}, {"CO2 emissions per capita", type number}, {"Population Density (P/Km²)", Int64.Type}})
 				in
 				    #"Tipo Alterado"
-
-	annotation PBI_NavigationStepName = Navegação
 
 	annotation PBI_ResultType = Table
 

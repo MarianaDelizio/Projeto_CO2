@@ -1,5 +1,5 @@
 {
-  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "config": "{\"version\":\"5.62\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
   "layoutOptimization": 0,
   "resourcePackages": [
     {
@@ -25,7 +25,80 @@
       "filters": "[]",
       "height": 720.00,
       "name": "440f00e924e0bb6627cb",
-      "visualContainers": [],
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"2d601ef8b08edd30bca2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.516728624535316,\"y\":404.46096654275095,\"z\":2000,\"width\":220.0743494423792,\"height\":182.00743494423793,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Sum(CO.Per Capita)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CO\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Per Capita\"}},\"Function\":0},\"Name\":\"Sum(CO.Per Capita)\",\"NativeReferenceName\":\"Soma de Per Capita\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Per Capita\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"value\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"25D\"}}},\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#20911A'\"}}}}}},\"selector\":{\"id\":\"default\"}}],\"label\":[{\"properties\":{\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.5}}}}}},\"selector\":{\"id\":\"default\"}}],\"fillCustom\":[{\"properties\":{\"fillColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#D2F6CF'\"}}}}}},\"selector\":{\"id\":\"default\"}}]}}}",
+          "filters": "[]",
+          "height": 182.01,
+          "width": 220.07,
+          "x": 9.52,
+          "y": 404.46,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"391c401e07051d500539\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":595,\"z\":7000,\"width\":1280,\"height\":125,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"CO.Year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CO\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Year\"},\"Name\":\"CO.Year\",\"NativeReferenceName\":\"Year\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Year\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"data\":[{\"properties\":{\"startDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'1977-01-01T00:00:00'\"}}},\"endDate\":{\"expr\":{\"Literal\":{\"Value\":\"datetime'2022-01-01T00:00:00'\"}}},\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Between'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CO\",\"Type\":0}],\"Where\":[{\"Condition\":{\"And\":{\"Left\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'1977-01-01T00:00:00'\"}}}},\"Right\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"datetime'2022-01-02T00:00:00'\"}}}}}}}]}}}}],\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 125.00,
+          "width": 1280.00,
+          "x": 0.00,
+          "y": 595.00,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"3fd1b9217e97b16c3e08\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.516728624535316,\"y\":0,\"z\":0,\"width\":1262.1561338289964,\"height\":182.00743494423793,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineStackedColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"CO.Year.Variation.Date Hierarchy.Year\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(CO.World Population)\"}],\"Y2\":[{\"queryRef\":\"Sum(CO.Per Capita)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CO\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Name\":\"Variation\",\"Property\":\"Year\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"},\"Name\":\"CO.Year.Variation.Date Hierarchy.Year\",\"NativeReferenceName\":\"Year Year\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"World Population\"}},\"Function\":0},\"Name\":\"Sum(CO.World Population)\",\"NativeReferenceName\":\"Soma de World Population\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Per Capita\"}},\"Function\":0},\"Name\":\"Sum(CO.Per Capita)\",\"NativeReferenceName\":\"Soma de Per Capita\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Name\":\"Variation\",\"Property\":\"Year\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.5}}}}},\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Scalar'\"}}}}}],\"valueAxis\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#20911A'\"}}}}},\"fillTransparency\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}}}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#5CF95A'\"}}}}}},\"selector\":{\"metadata\":\"Sum(CO.Per Capita)\"}}],\"lineStyles\":[{\"properties\":{\"strokeTransparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 182.01,
+          "width": 1262.16,
+          "x": 9.52,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"4d6332e10949cd90cc18\",\"layouts\":[{\"id\":0,\"position\":{\"x\":8.327137546468402,\"y\":214.12639405204462,\"z\":1000,\"width\":1262.1561338289964,\"height\":182.00743494423793,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"CO.Year.Variation.Date Hierarchy.Year\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(CO.CO2 emissions change)\"}],\"Y2\":[{\"queryRef\":\"Sum(CO.GDP growth (%))\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CO\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Name\":\"Variation\",\"Property\":\"Year\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"},\"Name\":\"CO.Year.Variation.Date Hierarchy.Year\",\"NativeReferenceName\":\"Year Year\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CO2 emissions change\"}},\"Function\":0},\"Name\":\"Sum(CO.CO2 emissions change)\",\"NativeReferenceName\":\"Soma de CO2 emissions change\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"GDP growth (%)\"}},\"Function\":0},\"Name\":\"Sum(CO.GDP growth (%))\",\"NativeReferenceName\":\"Soma de GDP growth (%)\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Name\":\"Variation\",\"Property\":\"Year\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"valueAxis\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#20911A'\"}}}}}},\"selector\":{\"metadata\":\"Sum(CO.CO2 emissions change)\"}}],\"lineStyles\":[{\"properties\":{\"strokeLineJoin\":{\"expr\":{\"Literal\":{\"Value\":\"'round'\"}}},\"lineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"'solid'\"}}},\"strokeTransparency\":{\"expr\":{\"Literal\":{\"Value\":\"16D\"}}}}},{\"properties\":{\"strokeShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}},\"selector\":{\"metadata\":\"Sum(CO.CO2 emissions change)\"}}]}}}",
+          "filters": "[]",
+          "height": 182.01,
+          "width": 1262.16,
+          "x": 8.33,
+          "y": 214.13,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"56573e5a6907edc82504\",\"layouts\":[{\"id\":0,\"position\":{\"x\":229.59107806691452,\"y\":404.46096654275095,\"z\":3000,\"width\":303.3457249070632,\"height\":182.00743494423793,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Sum(CO.World Population)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CO\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"World Population\"}},\"Function\":0},\"Name\":\"Sum(CO.World Population)\",\"NativeReferenceName\":\"Soma de World Population\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"World Population\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"value\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"30D\"}}},\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#20911A'\"}}}}}},\"selector\":{\"id\":\"default\"}}],\"fillCustom\":[{\"properties\":{\"fillColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#15FE11'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"45D\"}}}},\"selector\":{\"id\":\"default\"}}]}}}",
+          "filters": "[]",
+          "height": 182.01,
+          "width": 303.35,
+          "x": 229.59,
+          "y": 404.46,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"6d8c3b3d7707600c513c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":768.4758364312268,\"y\":404.46096654275095,\"z\":5000,\"width\":248.62453531598516,\"height\":182.00743494423793,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Sum(CO.GDP growth (%))\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CO\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"GDP growth (%)\"}},\"Function\":0},\"Name\":\"Sum(CO.GDP growth (%))\",\"NativeReferenceName\":\"Soma de GDP growth (%)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"GDP growth (%)\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"value\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"30D\"}}},\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#20911A'\"}}}}}},\"selector\":{\"id\":\"default\"}}],\"fillCustom\":[{\"properties\":{\"fillColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#15FE11'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"45D\"}}}},\"selector\":{\"id\":\"default\"}}]}}}",
+          "filters": "[]",
+          "height": 182.01,
+          "width": 248.62,
+          "x": 768.48,
+          "y": 404.46,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"b6b296ad10d351d92112\",\"layouts\":[{\"id\":0,\"position\":{\"x\":532.9368029739777,\"y\":404.46096654275095,\"z\":4000,\"width\":235.53903345724908,\"height\":182.00743494423793,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Sum(CO.CO2 emissions change)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CO\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CO2 emissions change\"}},\"Function\":0},\"Name\":\"Sum(CO.CO2 emissions change)\",\"NativeReferenceName\":\"Soma de CO2 emissions change\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CO2 emissions change\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"value\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"30D\"}}},\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#20911A'\"}}}}}},\"selector\":{\"id\":\"default\"}}],\"fillCustom\":[{\"properties\":{\"fillColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#D2F6CF'\"}}}}}},\"selector\":{\"id\":\"default\"}}]}}}",
+          "filters": "[]",
+          "height": 182.01,
+          "width": 235.54,
+          "x": 532.94,
+          "y": 404.46,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"e4677fb3946b6011a8d1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1017.100371747212,\"y\":404.46096654275095,\"z\":6000,\"width\":254.5724907063197,\"height\":182.00743494423793,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Sum(CO.CO2 emissions per capita)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CO\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CO2 emissions per capita\"}},\"Function\":0},\"Name\":\"Sum(CO.CO2 emissions per capita)\",\"NativeReferenceName\":\"Soma de CO2 emissions per capita\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CO2 emissions per capita\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"value\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"30D\"}}},\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#20911A'\"}}}}}},\"selector\":{\"id\":\"default\"}}],\"fillCustom\":[{\"properties\":{\"fillColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#D2F6CF'\"}}}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 182.01,
+          "width": 254.57,
+          "x": 1017.10,
+          "y": 404.46,
+          "z": 6000.00
+        }
+      ],
       "width": 1280.00
     }
   ]

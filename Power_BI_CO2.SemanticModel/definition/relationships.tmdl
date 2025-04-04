@@ -1,0 +1,5 @@
+relationship b862004a-ceab-4c41-924e-ac1a60d4c05d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CO.Year
+	toColumn: LocalDateTable_bed6532b-7a6b-49b7-a066-e9fa67fcd1f2.Date
+
